@@ -132,9 +132,9 @@ public class principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Nomina", jPanel1);
 
-        jButton5.setText("Buscar rol");
+        jButton5.setText("Nuevo rol");
 
-        jButton1.setText("Reportes");
+        jButton1.setText("Egresos");
 
         jButton9.setText("Ingresos");
 
