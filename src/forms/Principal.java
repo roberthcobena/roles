@@ -3,18 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vistas.p_principal;
+package forms;
+
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Roberth
  */
-public class principal extends javax.swing.JFrame {
+public class Principal extends javax.swing.JFrame {
 
     /**
      * Creates new form principal
      */
-    public principal() {
+    public Principal() {
         initComponents();
     }
 
@@ -133,6 +135,11 @@ public class principal extends javax.swing.JFrame {
         jTabbedPane1.addTab("Nomina", jPanel1);
 
         jButton5.setText("Nuevo rol");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Egresos");
 
@@ -214,6 +221,11 @@ public class principal extends javax.swing.JFrame {
         jMenu1.add(jSeparator5);
 
         jMenuItem4.setText("Salir");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem4);
 
         jMenuBar1.add(jMenu1);
@@ -292,6 +304,18 @@ public class principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        Nuevorol abrir = new Nuevorol();
+        abrir.setVisible (true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        Cerrar_Sesion();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -309,20 +333,21 @@ public class principal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new principal().setVisible(true);
+                new Principal().setVisible(true);
             }
         });
     }
@@ -371,4 +396,11 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
+    private void Cerrar_Sesion() {
+        if (JOptionPane.showConfirmDialog(rootPane, "¿Desea realmente cerrar su sesión?",
+                "Nuevo Rol de pagos", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
+            dispose(); 
+            Inicio cerrar = new Inicio();
+            cerrar.setVisible (true);        
+    }
 }
