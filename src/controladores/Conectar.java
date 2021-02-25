@@ -20,8 +20,11 @@ public Conecction conexion()
         //cargamos driver mysql
         Class.forName("org.gjt.mm.mysql.Driver");
         conect = (Conecction) DriverManager.getConnection("jdbc:mysql://localhost/prueba","root","");
+        JOptionPane.showMessageDialog(null, "Conexión correcta", "Alert", JOptionPane.ERROR_MESSAGE);
+
     } catch (Exception e){
         JOptionPane.showMessageDialog(null,"Error"+e);
+        JOptionPane.showMessageDialog(null, "Error Conexión", "Alert", JOptionPane.ERROR_MESSAGE);
     }
     return conect;
     }
